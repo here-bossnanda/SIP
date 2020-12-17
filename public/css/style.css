@@ -70,6 +70,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 td,
@@ -119,23 +120,29 @@ tr:nth-child(even) {
     box-shadow: 0 7px #b1ae25;
     color: black;
     display: block;
-    float: left;
-    padding-right: 30px;
-    margin-right: 10px
+    padding: 15px 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .btnAddView {
     background-color: #bc1be4;
     box-shadow: 0 7px #76118f;
     color: white;
+    display: block;
+    padding: 15px 20px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .btnDelete {
     background-color: #e41b1b;
     box-shadow: 0 7px #921414;
     color: white;
+    display: block;
+    padding: 15px 20px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .btnSubmit {

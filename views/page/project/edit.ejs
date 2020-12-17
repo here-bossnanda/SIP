@@ -13,6 +13,12 @@
                     <input type="date" id="start_date" value="<%= data.project.start_date.toISOString().split('T')[0] %>" name="start_date"><br>
                     <label for="end_date">End Date:</label><br>
                     <input type="date" id="end_date" value="<%= data.project.end_date.toISOString().split('T')[0] %>" name="end_date"><br>
+                    <label for="status">Status :</label><br>
+                    <select name="status" id="status">
+                        <option value="Idle" <%= (data.status === 'Idle') ? 'selected' : ''  %> >Idle</option>
+                        <option value="OnProgress" <%= (data.status === 'OnProgress') ? 'selected' : ''  %> >On Progress</option>
+                        <option value="Complate" <%= (data.status === 'Complate') ? 'selected' : ''  %> >Complate</option>
+                        </select>
                     <label for="managerId">Manager :</label><br>
                     <select name="managerId" id="position" id="managerId">
                         <option value="" selected> --- Manager ---</option>

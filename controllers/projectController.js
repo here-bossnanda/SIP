@@ -105,8 +105,8 @@ class ProjectController {
     }
 
     static update(req, res) {
-        const { id, name, budget, start_date, end_date, managerId } = req.body
-        const input = { name, budget, start_date, end_date, managerId };
+        const { id, name, budget, start_date, end_date, status, managerId } = req.body
+        const input = { name, budget, start_date, end_date, status, managerId };
 
         Project.update(input, {
                 where: { id }

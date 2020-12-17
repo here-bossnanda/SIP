@@ -43,15 +43,20 @@
                                         <%= moment(el.end_date) %>
                                     </th>
                                     <th>
-                                        <a href="/projects/edit/<%= el.id %>" class="button btnEdit">Edit</a>
-                                        <a href="/projects/destroy/<%= el.id %>" onclick="return confirm('Are you sure want to delete this record?');" class="button btnDelete">Delete</a>
-                                        <a href="/projects/add-employee/<%= el.id %>" class="button btnAddView">Add Employee</a>
+                                        <% if(el.status === 'OnProgress'){ %>
+                                            <a href="/projects/edit/<%= el.id %>" class="button btnEdit">Edit</a>
+                                            <a href="/projects/add-employee/<%= el.id %>" class="button btnAddView">Add Employee</a>
+                                            <% }else{ %>
+                                                <a href="/projects/edit/<%= el.id %>" class="button btnEdit">Edit</a>
+                                                <a href="/projects/destroy/<%= el.id %>" onclick="return confirm('Are you sure want to delete this record?');" class="button btnDelete">Delete</a>
+                                                <a href="/projects/add-employee/<%= el.id %>" class="button btnAddView">Add Employee</a>
+                                                <% } %>
                                     </th>
                                 </tr>
                                 <% }) %>
                                     <% } else{ %>
                                         <tr>
-                                            <th colspan="6" style="text-align: center;">No data available in table</th>
+                                            <th colspan="8" style="text-align: center;">No data available in table</th>
                                         </tr>
                                         <% } %>
                     </tbody>
