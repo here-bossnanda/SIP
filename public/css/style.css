@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins";
+}
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    height: 65px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #6fdee6;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    width: 250px;
+    margin-top: 0px;
+    color: white;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+    margin-right: -25px;
+}
+
+.header-right a {
+    line-height: 65px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s;
+}
+
+.header-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.8;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.btnAdd {
+    background-color: #6fdee6;
+    box-shadow: 0 7px #4b959b;
+    float: left;
+}
+
+.btnEdit {
+    background-color: #f0ec2c;
+    box-shadow: 0 7px #b1ae25;
+    color: black;
+    display: block;
+    float: left;
+    padding-right: 30px;
+    margin-right: 10px
+}
+
+.btnAddView {
+    background-color: #bc1be4;
+    box-shadow: 0 7px #76118f;
+    color: white;
+    cursor: pointer;
+}
+
+.btnDelete {
+    background-color: #e41b1b;
+    box-shadow: 0 7px #921414;
+    color: white;
+    cursor: pointer;
+}
+
+.btnSubmit {
+    background-color: #4CAF50;
+    box-shadow: 0 7px #3d8a40;
+    color: white;
+}
+
+.section {
+    padding: 20px;
+    margin-top: 30px;
+    height: 1500px;
+}
+
+
+/* Black */
+
+input[type=text],
+input[type=number],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.alert-error {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    text-align: left;
+}
+
+.alert-success {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #36f46f;
+    color: white;
+    text-align: left;
+}
+
+.alert-warning {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f4e736;
+    color: black;
+    text-align: left;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+footer {
+    background-color: #6fdee6;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+footer h5 {
+    color: #f7f7f7;
+    text-align: center;
+}
+
+
+/* Full-width input fields */
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* Set a style for all buttons */
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Extra styles for the cancel button */
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+
+/* Center the image and position the close button */
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+span.password {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* The Close Button (x) */
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.section {
+    padding: 20px;
+    margin-top: 120px;
+    height: 1500px;
+}
