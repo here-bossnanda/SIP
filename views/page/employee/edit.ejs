@@ -1,0 +1,28 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Add Position</h1>
+            <%- include('../../partials/validate') %>
+                <form action="/employees/update/<%= data.employee.id %>" method="post">
+                    <input type="text" style="display: none;" value="<%= data.employee.id %>" name="id">
+                    <label for="first_name">First Name :</label><br>
+                    <input type="text" id="first_name" value="<%= data.employee.first_name %>" name="first_name" placeholder="e.g: John"><br>
+                    <label for="last_name">Last Name :</label><br>
+                    <input type="text" id="last_name" value="<%= data.employee.last_name %>" name="last_name" placeholder="e.g: Doe"><br>
+                    <label for="phone_number">Phone Number :</label><br>
+                    <input type="number" id="phone_number" value="<%= data.employee.phone_number %>" name="phone_number" placeholder="e.g: 0822345678"><br>
+                    <label for="gender">Gender:</label><br>
+                    <input type="radio" id="male" <%=( data.employee.gender==='male' ) ? 'checked' : '' %> name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" <%=( data.employee.gender==='female' ) ? 'checked' : '' %> name="gender" value="female">
+                    <label for="female">Female</label><br><br>
+                    <label for="position">Position :</label><br>
+                    <select name="positionId" id="position" id="positionId">
+                    <option value="" selected> --- Position ---</option>
+                    <% data.position.forEach(el => { %>
+                    <option value="<%= el.id %>" <%= (data.employee.positionId === el.id) ? 'selected' : '' %> > <%= el.name %> </option>
+                    <% }) %>
+                    <input type="submit" class="button btnSubmit" value="Submit">
+                </form>
+        </div>
+    </div>

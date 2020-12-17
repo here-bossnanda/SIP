@@ -14,13 +14,6 @@ module.exports = {
             last_name: {
                 type: Sequelize.STRING
             },
-            photo: {
-                allowNull: true,
-                type: Sequelize.STRING
-            },
-            address: {
-                type: Sequelize.STRING
-            },
             gender: {
                 type: Sequelize.STRING
             },
