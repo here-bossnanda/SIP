@@ -1,0 +1,34 @@
+{
+    "name": "sip",
+    "version": "1.0.0",
+    "description": "Sistem informasi project",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/here-bossnanda/SIP.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/here-bossnanda/SIP/issues"
+    },
+    "homepage": "https://github.com/here-bossnanda/SIP#readme",
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "moment": "^2.29.1",
+        "pg": "^8.5.1",
+        "sequelize": "^6.3.5"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.6",
+        "sequelize-cli": "^6.2.0"
+    }
+}

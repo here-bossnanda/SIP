@@ -1,0 +1,61 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Data Project</h1>
+            <%- include('../../partials/message') %>
+                <a href="/projects/create" class="button btnAdd">Add Project</a>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Budget</th>
+                            <th>Project Manager</th>
+                            <th>Total Employee</th>
+                            <th>Deadline</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(project.length > 0) { %>
+                            <% project.forEach((el,idx) => { %>
+                                <tr>
+                                    <th>
+                                        <%= ++idx %>
+                                    </th>
+                                    <th>
+                                        <%= el.name %>
+                                    </th>
+                                    <th>
+                                        <%= el.status %>
+                                    </th>
+                                    <th>
+                                        <%= formatRupiah(el.budget) %>
+                                    </th>
+                                    <th>
+                                        <%= el.manager.fullname() %>
+                                    </th>
+                                    <th>
+                                        <%= el.employee.length %> people
+                                    </th>
+                                    <th>
+                                        <%= moment(el.end_date) %>
+                                    </th>
+                                    <th>
+                                        <a href="/projects/edit/<%= el.id %>" class="button btnEdit">Edit</a>
+                                        <a href="/projects/destroy/<%= el.id %>" onclick="return confirm('Are you sure want to delete this record?');" class="button btnDelete">Delete</a>
+                                        <a href="/projects/add-employee/<%= el.id %>" class="button btnAddView">Add Employee</a>
+                                    </th>
+                                </tr>
+                                <% }) %>
+                                    <% } else{ %>
+                                        <tr>
+                                            <th colspan="6" style="text-align: center;">No data available in table</th>
+                                        </tr>
+                                        <% } %>
+                    </tbody>
+                </table>
+
+        </div>
+    </div>

@@ -1,0 +1,23 @@
+<header>
+    <div class="container">
+        <div class="header-left">
+            <div class="logo">
+                <h4>SISTEM INFORMASI PROJECT</h4>
+            </div>
+        </div>
+
+        <span class="fa fa-bars menu-icon" style="display: none;"></span>
+        <div class="header-right">
+            <% if( checkLogin ){ %>
+                <a href="/">Home </a>
+                <a href="/projects">Project</a>
+                <a href="/employees">Employee</a>
+                <a href="/positions">Position</a>
+                <a href="/users">User</a>
+                <a href="/logout">Logout</a>
+                <% }else{ %>
+                    <a href="/login">Login</a>
+                    <% } %>
+        </div>
+    </div>
+</header>

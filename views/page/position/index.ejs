@@ -1,0 +1,40 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Data Position</h1>
+            <%- include('../../partials/message') %>
+                <a href="/positions/create" class="button btnAdd">Add Position</a>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(position.length > 0) { %>
+                            <% position.forEach((el,idx) => { %>
+                                <tr>
+                                    <th>
+                                        <%= ++idx %>
+                                    </th>
+                                    <th>
+                                        <%= el.name %>
+                                    </th>
+                                    <th>
+                                        <a href="/positions/edit/<%= el.id %>" class="button btnEdit">Edit</a>
+                                        <a href="/positions/destroy/<%= el.id %>" onclick="return confirm('Are you sure want to delete this record?');" class="button btnDelete">Delete</a>
+                                    </th>
+                                </tr>
+                                <% }) %>
+                                    <% } else{ %>
+                                        <tr>
+                                            <th colspan="3" style="text-align: center;">No data available in table</th>
+                                        </tr>
+                                        <% } %>
+                    </tbody>
+                </table>
+
+        </div>
+    </div>
