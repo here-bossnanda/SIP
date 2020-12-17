@@ -1,0 +1,26 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Add Project</h1>
+            <%- include('../../partials/validate') %>
+                <form action="/projects/update/<%= data.project.id %>" method="post">
+                    <input type="text" style="display: none;" name="id" value="<%= data.project.id %>">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" value="<%= data.project.name %>" placeholder="e.g: Sistem Informasi ....."><br>
+                    <label for="budget">Budget:</label><br>
+                    <input type="number" id="budget" value="<%= data.project.budget %>" name="budget" placeholder="e.g: 3000000"><br>
+                    <label for="start_date">Start Date:</label><br>
+                    <input type="date" id="start_date" value="<%= data.project.start_date.toISOString().split('T')[0] %>" name="start_date"><br>
+                    <label for="end_date">End Date:</label><br>
+                    <input type="date" id="end_date" value="<%= data.project.end_date.toISOString().split('T')[0] %>" name="end_date"><br>
+                    <label for="managerId">Manager :</label><br>
+                    <select name="managerId" id="position" id="managerId">
+                        <option value="" selected> --- Manager ---</option>
+                        <% data.manager.forEach(el => { %>
+                        <option value="<%= el.id %>"<%= (el.id === data.project.managerId) ? 'selected' : '' %>  > <%= el.fullname() %> - <%= el.position.name %> </option>
+                        <% }) %>
+                    </select>
+                    <input type="submit" class="button btnSubmit" value="Submit">
+                </form>
+        </div>
+    </div>
