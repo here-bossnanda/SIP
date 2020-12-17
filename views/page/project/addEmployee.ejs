@@ -1,0 +1,66 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>
+                <%= data.project.name %>
+            </h1>
+            <h4>
+                Project Manager :
+                <%= data.project.manager.fullname() %> | deadline:
+                    <%= moment(data.project.end_date) %>
+                        <br> budget:
+                        <%= formatRupiah(data.project.budget) %>
+
+            </h4>
+            <%- include('../../partials/validate') %>
+
+                <form action="/projects/add-employee/<%= data.project.id %>" method="post">
+                    <input type="text" name="projectId" value="<%= data.project.id %>" style="display: none;">
+                    <label for="employeeId">Employee :</label><br>
+                    <select name="employeeId" id="position" id="employeeId">
+                        <option value="" selected> --- Employee ---</option>
+                        <% data.employee.forEach(el => { %>
+                        <option value="<%= el.id %>" > <%= el.fullname() %> - <%= el.position.name %> </option>
+                        <% }) %>
+                    </select>
+                    <label for="position">Position:</label><br>
+                    <input type="text" id="position" name="position" placeholder="e.g: Frontend developer  ....."><br>
+                    <input type="submit" class="button btnSubmit" value="Submit">
+                </form>
+
+                <table style="margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(data.project.employee.length > 0) { %>
+                            <% data.project.employee.forEach((el,idx) => { %>
+                                <tr>
+                                    <th>
+                                        <%= ++idx %>
+                                    </th>
+                                    <th>
+                                        <%= el.fullname() %>
+                                    </th>
+                                    <th>
+                                        <%= el.EmployeeProject.position %>
+                                    </th>
+                                    <th>
+                                        <a href="/projects/add-employee/remove/<%= data.project.id %>/<%= el.EmployeeProject.id %>" onclick="return confirm('Are you sure want to delete this record?');" class="button btnDelete">Remove</a>
+                                    </th>
+                                </tr>
+                                <% }) %>
+                                    <% } else{ %>
+                                        <tr>
+                                            <th colspan="4" style="text-align: center;">No data available in table</th>
+                                        </tr>
+                                        <% } %>
+                    </tbody>
+                </table>
+        </div>
+    </div>

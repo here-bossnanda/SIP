@@ -26,7 +26,6 @@ class EmployeeController {
             .catch(err => {
                 res.send(err.message);
             })
-
     }
 
     static store(req, res) {
@@ -91,10 +90,10 @@ class EmployeeController {
         Employee.update(input, {
                 where: { id }
             })
-            .then(position => {
+            .then(employee => {
                 res.app.locals = {
                     status: 'success',
-                    message: 'success updated position'
+                    message: 'success updated employee'
                 }
 
                 res.redirect('/employees')

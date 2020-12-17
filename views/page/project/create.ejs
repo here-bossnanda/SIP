@@ -1,0 +1,26 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Add Project</h1>
+            <%- include('../../partials/validate') %>
+
+                <form action="/projects/store" method="post">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="e.g: Sistem Informasi ....."><br>
+                    <label for="budget">Budget:</label><br>
+                    <input type="number" id="budget" name="budget" placeholder="e.g: 3000000"><br>
+                    <label for="start_date">Start Date:</label><br>
+                    <input type="date" id="start_date" name="start_date"><br>
+                    <label for="end_date">End Date:</label><br>
+                    <input type="date" id="end_date" name="end_date"><br>
+                    <label for="managerId">Manager :</label><br>
+                    <select name="managerId" id="position" id="managerId">
+                        <option value="" selected> --- Manager ---</option>
+                        <% manager.forEach(el => { %>
+                        <option value="<%= el.id %>" > <%= el.fullname() %> - <%= el.position.name %> </option>
+                        <% }) %>
+                    </select>
+                    <input type="submit" class="button btnSubmit" value="Submit">
+                </form>
+        </div>
+    </div>

@@ -22,6 +22,10 @@ h1 {
     text-align: center;
 }
 
+h4 {
+    text-align: center;
+}
+
 header {
     height: 65px;
     width: 100%;
@@ -145,6 +149,7 @@ tr:nth-child(even) {
 
 input[type=text],
 input[type=number],
+input[type=date],
 select {
     width: 100%;
     padding: 12px 20px;

@@ -11,6 +11,9 @@ module.exports = {
             name: {
                 type: Sequelize.STRING
             },
+            budget: {
+                type: Sequelize.INTEGER
+            },
             start_date: {
                 type: Sequelize.DATE
             },
