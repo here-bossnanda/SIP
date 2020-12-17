@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "postgres",
-        "password": "kamu",
+        "password": "admin",
         "database": "dbsip",
         "host": "127.0.0.1",
         "dialect": "postgres"
@@ -14,10 +14,17 @@
         "dialect": "mysql"
     },
     "production": {
-        "username": "root",
-        "password": null,
-        "database": "database_production",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
+        "username": "xhqarvujgjtgqi",
+        "password": "5c35e32b8a6d1ceccbc9fd1b45c6c3d6d13533a9b063508964490ae1dd0742ed",
+        "database": "d2idmuacj85qhp",
+        "host": "ec2-54-235-158-17.compute-1.amazonaws.com",
+        "dialect": "postgres",
+        "ssl": true,
+        "dialectOptions": {
+        "ssl": {
+            "require": true,
+            "rejectUnauthorized": false
+            }
+        }
     }
 }
