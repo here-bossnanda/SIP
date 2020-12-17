@@ -16,7 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     Position.init({
-        name: DataTypes.STRING
+        name: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    msg: "name is require!"
+                }
+            }
+        }
     }, {
         sequelize,
         modelName: 'Position',

@@ -3,17 +3,17 @@ const bcrypt = require('bcrypt');
 
 class LoginController {
     static toLogin(req, res) {
-        let errors;
+        let checkMessage;
         if (req.app.locals.message) {
             const { status, message } = req.app.locals;
-            errors = { status, message };
+            checkMessage = { status, message };
 
             delete req.app.locals.status;
             delete req.app.locals.message;
         }
-        let checkLogin = req.session.userId;
+        const checkLogin = req.session.userId;
 
-        res.render('page/auth/login', { errors, checkLogin });
+        res.render('page/auth/login', { checkMessage, checkLogin });
     }
 
     static login(req, res) {

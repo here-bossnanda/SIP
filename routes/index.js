@@ -15,10 +15,10 @@ router.post('/login', loginController.login);
 router.get('/logout', loginController.logout);
 
 
-router.use('/employees', employeeRouter);
-// router.use('/projects', projectRouter);
-// router.use('/positions', positionRouter);
-// router.use('/users', userRouter);
+router.use('/employees', isLogin, employeeRouter);
+router.use('/projects', isLogin, projectRouter);
+router.use('/positions', isLogin, positionRouter);
+router.use('/users', isLogin, userRouter);
 
 
 module.exports = router;

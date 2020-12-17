@@ -1,0 +1,14 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Edit Position</h1>
+            <%- include('../../partials/validate') %>
+
+                <form action="/positions/update/<%= position.id %>" method="post">
+                    <input type="text" style="display: none;" name="id" value="<%= position.id %>">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" value="<%= position.name %>" placeholder="e.g: General Manager"><br>
+                    <input type="submit" class="button btnSubmit" value="Submit">
+                </form>
+        </div>
+    </div>

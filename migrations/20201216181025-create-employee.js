@@ -33,7 +33,7 @@ module.exports = {
                     model: "Positions",
                     key: "id"
                 },
-                onDelete: "RESTRICT",
+                onDelete: "CASCADE",
                 onUpdate: "CASCADE"
             },
             createdAt: {
