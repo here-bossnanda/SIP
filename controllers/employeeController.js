@@ -86,7 +86,7 @@ class EmployeeController {
     static update(req, res) {
         const { id, first_name, last_name, gender, phone_number, positionId } = req.body;
         const input = { first_name, last_name, gender, phone_number, positionId };
-        console.log(input);
+
 
         Employee.update(input, {
                 where: { id }

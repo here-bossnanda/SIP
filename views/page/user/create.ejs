@@ -1,0 +1,27 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Add User</h1>
+            <%- include('../../partials/validate') %>
+                <form action="/users/store" method="post">
+                    <label for="username">Username :</label><br>
+                    <input type="text" id="username" name="username" placeholder="e.g: John"><br>
+                    <label for="password">Password :</label><br>
+                    <input type="password" id="password" name="password" placeholder="password"><br>
+                    <label for="role">Position :</label><br>
+                    <select name="role" id="role" id="role">
+                    <option value="admin" >Admin</option>
+                    <option value="projectManager" >Project Manager</option>
+                    <option value="employee" >Employee</option>
+                    </select>
+                    <label for="employeeId">Employee :</label><br>
+                    <select name="employeeId" id="position" id="employeeId">
+                        <option value="" selected> --- Employee ---</option>
+                        <% employee.forEach(el => { %>
+                        <option value="<%= el.id %>" > <%= el.fullname() %> - <%= el.position.name %> </option>
+                        <% }) %>
+                    </select>
+                    <input type="submit" class="button btnSubmit" value="Submit">
+                </form>
+        </div>
+    </div>

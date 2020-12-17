@@ -1,0 +1,46 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Data User</h1>
+            <%- include('../../partials/message') %>
+                <a href="/users/create" class="button btnAdd">Add User</a>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Employee</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(user.length > 0) { %>
+                            <% user.forEach((el,idx) => { %>
+                                <tr>
+                                    <th>
+                                        <%= ++idx %>
+                                    </th>
+                                    <th>
+                                        <%= el.username %>
+                                    </th>
+                                    <th>
+                                        <%= el.role %>
+                                    </th>
+                                    <th>
+                                        <%= (el.employee) ? el.employee.fullname() : el.username %>
+                                    </th>
+                                    <th>
+                                        <a href="/users/edit/<%= el.id %>" class="button btnEdit">Edit</a>
+                                        <a href="/users/destroy/<%= el.id %>" onclick="return confirm('Are you sure want to delete this record?');" class="button btnDelete">Delete</a>
+                                    </th>
+                                </tr>
+                                <% }) %>
+                                    <% } else{ %>
+                                        <tr>
+                                            <th colspan="6" style="text-align: center;">No data available in table</th>
+                                        </tr>
+                                        <% } %>
+
+        </div>
+    </div>

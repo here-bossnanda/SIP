@@ -1,0 +1,27 @@
+<%- include('../../layout/master') %>
+    <div class="container">
+        <div class="section">
+            <h1>Edit User</h1>
+            <%- include('../../partials/validate') %>
+                <form action="/users/update/<%= data.user.id %>" method="post">
+                    <input type="text" style="display: none;" value="<%= data.user.id %>" name="id">
+                    <label for="name">Username :</label><br>
+                    <input type="text" id="username" name="username" value="<%= data.user.username %>"><br>
+                    <!-- <input type="password" name="password" value="<%= data.user.password %>"><br> -->
+                    <label for="role">Position :</label><br>
+                    <select name="role" id="role" id="role">
+                    <option value="admin" <%= (data.user.role === 'admin') ? 'selected' : '' %> >Admin</option>
+                    <option value="projectManager" <%= (data.user.role === 'projectManager') ? 'selected' : '' %> >Project Manager</option>
+                    <option value="employee" <%= (data.user.role === 'employee') ? 'selected' : '' %> >Employee</option>
+                    </select>
+                    <label for="employeeId">Employee :</label><br>
+                    <select name="employeeId" id="employeeId" id="employeeId">
+                        <option value="" selected> --- Employee ---</option>
+                        <% data.employee.forEach(el => { %>
+                        <option value="<%= el.id %>" <%= (el.id === data.user.employeeId) ? 'selected' : '' %> > <%= el.fullname() %> - <%= el.position.name %> </option>
+                        <% }) %>
+                    </select>
+                    <input type="submit" class="button btnSubmit" value="Submit">
+                </form>
+        </div>
+    </div>
